@@ -7,83 +7,83 @@
 	Author:
 	Joel Bair / joel@thirdsocial.com
 
-	Usage:
-	$('div.selector').phRender([ dataObj | method | callback ]);
+Usage:
+$('div.selector').phRender([ dataObj | method | callback ]);
 
-	Example(s):
-	// just personalize this block
+Example(s):
+// just personalize this block
 
-	$('div.selector').phRender({
-		code: 	"JoeSomebodyX1",
-		profile:	{
-			firstName:	"Joe",
-			lastName:	"Somebody",
-			email:		"joe@somewhere.org"
+$('div.selector').phRender({
+code: 	"JoeSomebodyX1",
+profile:	{
+	firstName:	"Joe",
+	lastName:	"Somebody",
+	email:		"joe@somewhere.org"
+}
+});
+
+// with a callback
+$('div.selector').phRender({
+code: 	"JoeSomebodyX1",
+profile:	{
+	firstName:	"Joe",
+	lastName:	"Somebody",
+	email:		"joe@somewhere.org"
+}
+}, function(node){
+// node = the html DOM node
+alert ('done');
+});
+
+Arguments: (may be given in any order)
+
+data :: (object) An object containing personalization data structures in key = value pairs
+{
+	code: 	"JoeSomebodyX1",
+	profile:	{
+		firstName:	"Joe",
+		lastName:	"Somebody",
+		email:		"joe@somewhere.org"
+	},
+	records: {
+		some_Name: {
+			field1: "val1",
+			...
 		}
-	});
-
-	// with a callback
-	$('div.selector').phRender({
-		code: 	"JoeSomebodyX1",
-		profile:	{
-			firstName:	"Joe",
-			lastName:	"Somebody",
-			email:		"joe@somewhere.org"
+	},
+	attributes: {
+		attrib1: "val1",
+		...
+	},
+	links: {
+		link1: "url1",
+		...
+	},
+	association: {
+		code: "",
+		profile: {
+			...
 		}
-	}, function(node){
-		// node = the html DOM node
-		alert ('done');
-	});
-
-	Arguments: (may be given in any order)
-
-		data :: (object) An object containing personalization data structures in key = value pairs
-		{
-			code: 	"JoeSomebodyX1",
-			profile:	{
-				firstName:	"Joe",
-				lastName:	"Somebody",
-				email:		"joe@somewhere.org"
-			},
-			records: {
-				some_Name: {
-					field1: "val1",
-					...
-				}
-			},
-			attributes: {
-				attrib1: "val1",
-				...
-			},
-			links: {
-				link1: "url1",
-				...
-			},
-			association: {
-				code: "",
-				profile: {
-					...
-				}
-			},
-			referer: {
-				code: "",
-				profile: {
-					...
-				}
-			}
+	},
+	referer: {
+		code: "",
+		profile: {
+			...
 		}
+	}
+}
 
-		method :: (string) A plugin method to call
-			possible = [ personalize | templatize ]
-			default = personalize
+method :: (string) A plugin method to call
+	possible = [ personalize | templatize ]
+	default = personalize
 
-			personalize = render text values by class name in standard purlHub fashion (i.e. phProfileData-firstName)
-			templatize = strip rendered text and return the elements to their original ph class named state.
+	personalize = render text values by class name in standard purlHub fashion (i.e. phProfileData-firstName)
+	templatize = strip rendered text and return the elements to their original ph class named state.
 
-		callback :: (function) a callback function to call after method invocation
-			function(thisNode) {
-				alert('done');
-			}
+callback :: (function) a callback function to call after method invocation
+	function(thisNode) {
+		alert('done');
+	}
 
 */
 (function( $ ){
@@ -102,7 +102,6 @@
 					accntObj['companyWebsite'] = accntObj['companyWebsite'].replace(/^/, "http://");
 				}
 			}
-
         }
 
         var action = 'personalize';
@@ -188,12 +187,12 @@
         }
 
         var ixes = {
-            profileDataClassPrefix:     'phProfileData',
-            recordDataClassPrefix:      'phRecordData',
-            attributeDataClassPrefix:   'phAttributeData',
-            referralDataClassPrefix:	'phReferralData',
-            associationDataClassPrefix: 'phAssociatedData',
-            referrerDataClassPrefix:    'phReferrerData',
+            profileDataClassPrefix:			'phProfileData',
+            recordDataClassPrefix:		'phRecordData',
+            attributeDataClassPrefix:		'phAttributeData',
+            referralDataClassPrefix:		'phReferralData',
+            associationDataClassPrefix:	'phAssociatedData',
+            referrerDataClassPrefix:		'phReferrerData',
 			companyDataClassPrefix:		'tsCompanyData'
         };
 
