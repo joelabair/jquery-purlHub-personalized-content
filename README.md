@@ -9,7 +9,7 @@ Personalizes markup based on standard purlHub class flagging semantics. PurlHub 
 $('div.selector').phRender([ dataObj | method | callback ]);
 ```
 
-####Example(s):
+####Example(s): 
 ```javascript
 // just personalize this block
 $('div.selector').phRender({
@@ -89,12 +89,14 @@ dataObj :: (object) An object containing personalization data structures in the 
 * templatize = remove personalization and return the elements to their original 
 purlHub class flagged state.
 
+
 ####callback :: (function) a callback function to call after method invocation
 ```javascript
 function(ele) {
 	alert('done');
 }
 ```
+
 
 The plugin fully supports curried callbacks, useful for jQuery chaining:
 ```javascript
