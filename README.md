@@ -95,7 +95,8 @@ function(ele) {
 	alert('done');
 }
 ```
-Curried callback support is useful for jQuery chaining:
+
+The plugin fully supports curried callbacks, useful for jQuery chaining:
 ```javascript
 $('.contact-info').phRender('personalize').fadeOut('slow').fadeIn('slow');
 ```
