@@ -1,7 +1,7 @@
 jquery-purlHub-personalized-content
 ===================================
 
-Personalizes markup based on standard purlHub class flagging semantics. Ref: http://support.purlhub.com/customer/portal/articles/567040-personalizing-in-your-pages-integration-basics-
+Personalizes markup based on standard purlHub class flagging semantics. PurlHub personalization is a rich-markup, contextually aware lightweight templating system, designed to be both extremenly simple to use and adapatable. Ref: ( http://support.purlhub.com/customer/portal/articles/567040-personalizing-in-your-pages-integration-basics- ) 
 
 	
 ####Usage:
@@ -84,10 +84,10 @@ dataObj :: (object) An object containing personalization data structures in the 
 ####method :: (string) A plugin method to call
 [ personalize, templatize ] default = personalize
 
-* personalize = render text values by class name in standard purlHub fashion 
+* personalize = render textual string values by class flagg in standard purlHub fashion 
 (i.e. phProfileData-firstName)
-* templatize = strip rendered text and return the elements to their original 
-ph class named state.
+* templatize = remove personalization and return the elements to their original 
+purlHub class flagged state.
 
 ####callback :: (function) a callback function to call after method invocation
 ```javascript
@@ -95,3 +95,4 @@ function(ele) {
 	alert('done');
 }
 ```
+
